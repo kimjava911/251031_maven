@@ -5,6 +5,7 @@ package org.example;
 
 import org.example.model.BlogResponse;
 import org.example.service.BlogSearchService;
+import org.example.service.SupabaseService;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,6 +15,8 @@ public class App
     public static void main( String[] args ) throws IOException, InterruptedException {
         BlogSearchService blogSearchService = new BlogSearchService();
         List<BlogResponse.BlogItem> items = blogSearchService.search("레제편", 50);
-        items.stream().forEach(System.out::println);
+//        items.stream().forEach(System.out::println);
+        SupabaseService supabaseService = new SupabaseService();
+        supabaseService.saveBlogItem(items.get(0));
     }
 }
