@@ -1,6 +1,4 @@
-package org.example;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+package org.example.model;
 
 import java.util.List;
 
