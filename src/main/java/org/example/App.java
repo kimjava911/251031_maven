@@ -40,6 +40,7 @@ public class App
         String body = httpResponse.body();
         ObjectMapper objectMapper = new ObjectMapper(); // 문자열 -> 클래스/레코드 객체
         BlogResponse blogResponse = objectMapper.readValue(body, BlogResponse.class);
-        System.out.println(blogResponse);
+//        System.out.println(blogResponse);
+        blogResponse.items().stream().forEach(System.out::println);
     }
 }
