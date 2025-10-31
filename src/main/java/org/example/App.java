@@ -4,6 +4,7 @@
 package org.example;
 
 import io.github.cdimascio.dotenv.Dotenv;
+import tools.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.net.URI;
@@ -37,6 +38,8 @@ public class App
                 .build();
         HttpResponse<String> httpResponse = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
         String body = httpResponse.body();
-        System.out.println(body);
+        ObjectMapper objectMapper = new ObjectMapper(); // 문자열 -> 클래스/레코드 객체
+        BlogResponse blogResponse = objectMapper.readValue(body, BlogResponse.class);
+        System.out.println(blogResponse);
     }
 }
