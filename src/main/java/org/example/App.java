@@ -3,20 +3,24 @@
 // kr.co.programmers ...
 package org.example;
 
-import org.example.model.BlogResponse;
-import org.example.service.BlogSearchService;
-import org.example.service.SupabaseService;
+import org.example.service.GeminiService;
 
 import java.io.IOException;
-import java.util.List;
 
 public class App
 {
     public static void main( String[] args ) throws IOException, InterruptedException {
-        BlogSearchService blogSearchService = new BlogSearchService();
-        List<BlogResponse.BlogItem> items = blogSearchService.search("레제편", 50);
+//        BlogSearchService blogSearchService = new BlogSearchService();
+//        List<BlogResponse.BlogItem> items = blogSearchService.search("코쿠시보", 10);
 //        items.stream().forEach(System.out::println);
-        SupabaseService supabaseService = new SupabaseService();
-        supabaseService.saveBlogItem(items.get(0));
+//        SupabaseService supabaseService = new SupabaseService();
+//        supabaseService.saveBlogItem(items.get(0));
+//        for (BlogResponse.BlogItem item : items) {
+//            supabaseService.saveBlogItem(item);
+//            // insert ~ : 2번 => bulk
+//        }
+        GeminiService geminiService = new GeminiService();
+        String answer = geminiService.chat("자바를 만든 사람의 이름은?");
+        System.out.println(answer);
     }
 }

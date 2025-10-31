@@ -48,7 +48,7 @@ public class SupabaseService {
             ); // JSON -> 문자열로 직렬화된 형태로 받아줌
             String body = response.body();
             System.out.println(response.statusCode());
-            System.out.println(body);
+            if (!body.isBlank()) System.out.println(body);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

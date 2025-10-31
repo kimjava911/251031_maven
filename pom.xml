@@ -30,5 +30,11 @@
       <artifactId>jackson-databind</artifactId>
       <version>3.0.1</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/com.google.genai/google-genai -->
+    <dependency>
+      <groupId>com.google.genai</groupId>
+      <artifactId>google-genai</artifactId>
+      <version>1.25.0</version>
+    </dependency>
   </dependencies>
 </project>
